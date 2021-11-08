@@ -116,6 +116,22 @@
 
         });
 
+        let phoneRegex = RegExp("^(\\d{0,9}[\\s]?)?\\d{10}$");
+
+        let telephone = document.querySelector('#number');
+        let telephoneError = document.querySelector('.number-error');
+        telephone.addEventListener('input', function() 
+        {
+            if (phoneRegex.test(telephone.value))
+             {
+                telephoneError.textContent = "";
+            }
+             else 
+             {
+                telephoneError.textContent = " Country code followed by space and  then enter 10 digit number";
+            }
+        });
+
 </script>
 
 </body>
